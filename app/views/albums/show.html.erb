@@ -1,0 +1,11 @@
+<h1><%= @album.title %></h1>
+
+<%= image_tag(@album.cover.url) %>
+
+<% @album.songs.each do |song| %>
+  <div>
+    <%= song.title %>
+  </div>
+<% end %>
+
+<%= link_to 'edit',  edit_album_path(@album) %>

@@ -1,0 +1,27 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import Song from './Song'
+
+const SongList = props => {
+  return(
+    <div>
+      {props.playList.songs.map(song => {
+        return(
+          <Song
+            key={song.id}
+            keyId={song.id}
+            albumTitle={props.playList.album.title}
+            song={song}
+          />
+        )
+      })}
+    </div>
+  )
+}
+
+SongList.propTypes = {
+  playList: PropTypes.object
+}
+
+export default SongList

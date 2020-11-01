@@ -1,3 +1,10 @@
 <h1>More Music Less Drama</h1>
 
-<%= link_to 'New Album', new_album_path %>
+<%= javascript_pack_tag 'Dashboard' %>
+
+<%= content_tag(:div, id: 'play-list', data: @play_list.to_json) do %>
+<% end %>
+
+<div class="container" id="dashboard-container">
+  <div id="dashboard"></div>
+</div>

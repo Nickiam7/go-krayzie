@@ -1,0 +1,16 @@
+<h1>Edit album</h1>
+<%= form_with(model: @album, local: true) do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: 'Title' %><br>
+    <%= f.text_field :release_date, placeholder: 'Release date' %><br>
+    <%= f.file_field :cover %>
+  </div>
+  <div>
+    <%= f.fields_for :songs do |song| %>
+      <%= render 'song_fields', f: song %>
+    <% end %>
+    <%= link_to_add_association 'Add song', f, :songs, class: "btn btn-primary" %>
+  </div>
+  <%= f.submit 'Edit album' %>
+<% end %>
+<%= link_to 'Cancel', :back %>
