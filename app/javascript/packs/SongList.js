@@ -11,7 +11,7 @@ const SongList = props => {
           <Song
             key={song.id}
             keyId={song.id}
-            albumTitle={props.playList.album.title}
+            album={props.playList.album}
             song={song}
           />
         )

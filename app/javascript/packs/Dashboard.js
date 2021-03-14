@@ -9,9 +9,15 @@ const Dashboard = props => {
 
   return(
     <>
-      <SongList
-        playList={playList}
-      />
+      <div className="row">
+        <div className="col-md-6">
+          <div className="dashboard__section section-current-list">
+            <SongList
+              playList={playList}
+            />
+          </div>
+        </div>
+      </div>
     </>
   )
 }
